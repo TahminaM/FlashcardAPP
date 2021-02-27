@@ -1,6 +1,6 @@
 # FlashcardAPP
 second_Submission
-## Lab 2
+## Lab 1
 
 ## App Description
 Display a question
