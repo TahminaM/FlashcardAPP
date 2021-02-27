@@ -7,7 +7,7 @@ Display a question
 Respond to a user's tap to display the answer to the question
 
 ## App Walk-though
-
+<"https://recordit.co/j9s1Muiyby.gif" width=200><br>
 +![FlashcardAPP](https://recordit.co/j9s1Muiyby.gif)
 
 ## Required
