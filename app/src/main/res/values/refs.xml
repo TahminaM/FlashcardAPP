@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <drawable name="card_background">card_background</drawable>
+    <drawable name="eye_open">eye_open</drawable>
+    <drawable name="add">add</drawable>
+    <drawable name="save">save</drawable>
+    <drawable name="cancel">cancel</drawable>
+    <drawable name="eye_hidden" />
+</resources>

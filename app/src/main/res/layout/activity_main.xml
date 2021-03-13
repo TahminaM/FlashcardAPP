@@ -1,0 +1,109 @@
+
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+    <TextView
+        android:id="@+id/question"
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        android:textSize="30sp"
+        android:gravity="center"
+        android:text="When was the first version of Android released?"
+        android:textAlignment="center"
+        android:elevation="10dp"
+        android:textColor="@color/white"
+        android:background="@drawable/card_background" />
+
+    <TextView
+        android:id="@+id/answer"
+        android:layout_width="match_parent"
+        android:layout_height="226dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:background="#81B622"
+        android:gravity="center"
+        android:text="2008"
+        android:textAlignment="center"
+        android:textColor="#ffffff"
+        android:textSize="40sp"
+        android:visibility="invisible" />
+
+    <TextView
+        android:id="@+id/choiceThree"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginStart="-2dp"
+        android:layout_marginTop="230dp"
+        android:background="#E2BEF1"
+        android:gravity="center"
+        android:text="2006"
+        android:textColor="#ffffff"
+        android:textSize="50sp" />
+    <TextView
+        android:id="@+id/choiceTwo"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_centerInParent="true"
+        android:layout_marginStart="0dp"
+        android:layout_marginTop="325dp"
+        android:background="#E2BEF1"
+        android:gravity="center"
+        android:text="2007"
+        android:textColor="#ffffff"
+        android:textSize="50sp" />
+
+
+    <TextView
+        android:id="@+id/choiceOne"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_centerInParent="true"
+        android:layout_marginStart="-2dp"
+        android:layout_marginTop="417dp"
+        android:background="#E2BEF1"
+        android:gravity="center"
+        android:text="2008"
+        android:textColor="#ffffff"
+        android:textSize="50sp" />
+
+    <ImageView
+        android:id="@+id/toggle"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="10dp"
+        android:src="@drawable/ic_open_eye" />
+
+    <Button
+        android:id="@+id/buttonR"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/choiceThree"
+        android:layout_centerInParent="true"
+        android:layout_marginTop="197dp"
+        android:gravity="center"
+        android:text="Reset" />
+
+    <ImageView
+        android:id="@+id/add"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="10dp"
+        android:layout_marginRight="10dp"
+        android:src="@drawable/add" />
+
+
+</RelativeLayout>
