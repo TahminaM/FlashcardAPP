@@ -29,6 +29,7 @@ App Description
 Users can now add their own flashcards and save them so they can use it to study.
 
 ## App Walk-though
+<"http://g.recordit.co/6kCz0Ydc1c.gif " width=200><br>
 +![FlashcardAPP](http://g.recordit.co/6kCz0Ydc1c.gif)
 
 ##Required
