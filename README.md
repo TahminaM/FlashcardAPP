@@ -31,6 +31,7 @@ Users can now add their own flashcards and save them so they can use it to study
 ## App Walk-though
 <"http://g.recordit.co/6kCz0Ydc1c.gif " width=200><br>
 +![FlashcardAPP](http://g.recordit.co/6kCz0Ydc1c.gif)
++![FlashcardAPP](http://g.recordit.co/xWhb5JoRGK.gif)
 
 ##Required
 - [X]User can click on a ‘+’ button that takes the user to new ‘Add Card Screen’
