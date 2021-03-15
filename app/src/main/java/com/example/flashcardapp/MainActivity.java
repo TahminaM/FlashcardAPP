@@ -7,6 +7,9 @@ import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 import androidx.appcompat.app.AppCompatActivity;
+
+import com.example.flashcard.R;
+
 public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -28,21 +31,21 @@ public class MainActivity extends AppCompatActivity {
         choiceOne.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                choiceOne.setBackgroundColor(getResources().getColor(R.color.green, null));
+                choiceOne.setBackgroundColor(getResources().getColor(R.color.purple_200, null));
             }
         });
         choiceTwo.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                choiceOne.setBackgroundColor(getResources().getColor(R.color.green, null));
-                choiceTwo.setBackgroundColor(getResources().getColor(R.color.red, null));
+                choiceOne.setBackgroundColor(getResources().getColor(R.color.purple_200, null));
+                choiceTwo.setBackgroundColor(getResources().getColor(R.color.black, null));
             }
         });
         choiceThree.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                choiceOne.setBackgroundColor(getResources().getColor(R.color.green, null));
-                choiceThree.setBackgroundColor(getResources().getColor(R.color.red, null));
+                choiceOne.setBackgroundColor(getResources().getColor(R.color.purple_200, null));
+                choiceThree.setBackgroundColor(getResources().getColor(R.color.black, null));
             }
         });
         //question and answer toggle
@@ -64,9 +67,9 @@ public class MainActivity extends AppCompatActivity {
         buttonR.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                choiceOne.setBackgroundColor(getResources().getColor(R.color.pink, null));
-                choiceTwo.setBackgroundColor(getResources().getColor(R.color.pink, null));
-                choiceThree.setBackgroundColor(getResources().getColor(R.color.pink, null));
+                choiceOne.setBackgroundColor(getResources().getColor(R.color.teal_200, null));
+                choiceTwo.setBackgroundColor(getResources().getColor(R.color.teal_200, null));
+                choiceThree.setBackgroundColor(getResources().getColor(R.color.teal_200, null));
                 //questionTextView.setText("When was the first version of Android released?");
                 flipped[0] = false;
             }
@@ -80,7 +83,7 @@ public class MainActivity extends AppCompatActivity {
                     choiceOne.setVisibility(View.INVISIBLE);
                     choiceTwo.setVisibility(View.INVISIBLE);
                     choiceThree.setVisibility(View.INVISIBLE);
-                    toggle.setImageResource(R.drawable.eye_hidden);
+                    toggle.setImageResource(R.drawable.ic_eye_hidden);
                 } else {
                     showAnswers[0] = true;
                     choiceOne.setVisibility(View.VISIBLE);
@@ -93,7 +96,7 @@ public class MainActivity extends AppCompatActivity {
         findViewById(R.id.add).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(MainActivity.this,AddCardActivity.class);
+                Intent intent = new Intent(MainActivity.this, AddCardActivity.class);
 
                 MainActivity.this.startActivityForResult(intent, 100);
             }
