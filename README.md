@@ -27,8 +27,8 @@
 App Description
 Users can now add their own flashcards and save them so they can use it to study.
 
-App Walk-though
-+![FlashcardAPP](http://g.recordit.co/FSxp8uPSxh.gif)
+## App Walk-though
++![FlashcardAPP](http://g.recordit.co/T2n0OOkHRF.gif)
 
 ##Required
 - [X]User can click on a ‘+’ button that takes the user to new ‘Add Card Screen’
