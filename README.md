@@ -21,6 +21,7 @@
 - [X]Further customize and style the card
 
 ## App Walk-though
+<"http://g.recordit.co/6kCz0Ydc1c.gif" width=200><br>
 +![FlashcardAPP](http://g.recordit.co/wHGzwU7Au7.gif)
 
 ##Lab 2
@@ -28,7 +29,7 @@ App Description
 Users can now add their own flashcards and save them so they can use it to study.
 
 ## App Walk-though
-+![FlashcardAPP](http://g.recordit.co/T2n0OOkHRF.gif)
++![FlashcardAPP](http://g.recordit.co/6kCz0Ydc1c.gif)
 
 ##Required
 - [X]User can click on a ‘+’ button that takes the user to new ‘Add Card Screen’
