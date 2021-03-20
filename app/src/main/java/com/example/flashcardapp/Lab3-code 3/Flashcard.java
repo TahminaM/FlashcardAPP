@@ -1,4 +1,5 @@
-package com.example.flashcardapp;
+package com.yourpackage.packagenamehere;
+
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
