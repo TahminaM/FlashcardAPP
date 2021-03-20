@@ -35,10 +35,12 @@ public class Flashcard {
 
     @NonNull
     public String getUuid() {
+
         return uuid;
     }
 
     public void setUuid(@NonNull String uuid) {
+
         this.uuid = uuid;
     }
 
@@ -60,33 +62,40 @@ public class Flashcard {
 
     @NonNull
     public String getQuestion() {
+
         return question;
     }
 
     public void setQuestion(@NonNull String question) {
+
         this.question = question;
     }
 
     @NonNull
     public String getAnswer() {
+
         return answer;
     }
 
     public void setAnswer(@NonNull String answer) {
+
         this.answer = answer;
     }
 
     @Nullable
-    public String getWrongAnswer1() {
+    public String getWrongAnswer1()
+    {
         return wrongAnswer1;
     }
 
     public void setWrongAnswer1(@NonNull String wrongAnswer1) {
+
         this.wrongAnswer1 = wrongAnswer1;
     }
 
     @Nullable
     public String getWrongAnswer2() {
+
         return wrongAnswer2;
     }
 
