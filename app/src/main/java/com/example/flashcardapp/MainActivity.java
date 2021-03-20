@@ -1,3 +1,4 @@
+
 package com.example.flashcardapp;
 
 import android.content.Intent;
@@ -7,21 +8,23 @@ import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 import androidx.appcompat.app.AppCompatActivity;
-
-import com.google.android.material.snackbar.Snackbar;
-
-import java.util.List;
-
 import com.example.flashcard.R;
+
+//added for lab 3
+import com.google.android.material.snackbar.Snackbar;
+import java.util.List;
 
 public class MainActivity extends AppCompatActivity {
 
+    //added for lab 3
     private TextView questionSideView;
     private TextView answerSideView;
 
     FlashcardDatabase flashcardDatabase;
     List<Flashcard> allFlashcards;
     int currentCardDisplayedIndex = 0;
+
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -34,12 +37,12 @@ public class MainActivity extends AppCompatActivity {
         TextView choiceThree = findViewById(R.id.choiceThree);
         ImageView toggle = findViewById(R.id.toggle);
         Button buttonR = findViewById(R.id.buttonR);
-        ImageView add = (ImageView) findViewById(R.id.add);
-
         ImageView add = findViewById(R.id.add);
-        ImageView trash = findViewById(R.id.deleteBtn);
 
+        //added for lab 3
+        ImageView trash = findViewById(R.id.deleteBtn);
         flashcardDatabase = new FlashcardDatabase(getApplicationContext());
+
         questionSideView = findViewById(R.id.question);
         answerSideView = findViewById(R.id.answer);
 
@@ -52,12 +55,14 @@ public class MainActivity extends AppCompatActivity {
             ((TextView) findViewById(R.id.answer)).setText(allFlashcards.get(0).getAnswer());
 
         }
+
         currentCardDisplayedIndex = 0;
         Flashcard flashcard = flashcardDatabase.getAllCards().get(0);
         String question = flashcard.getQuestion();
         questionSideView.setText(question);
         String answer = flashcard.getAnswer();
         answerSideView.setText(answer);
+
 
         //for the button.
         final boolean[] showAnswers = {true};
@@ -67,6 +72,7 @@ public class MainActivity extends AppCompatActivity {
         choiceOne.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                choiceOne.setBackgroundColor(getResources().getColor(R.color.green, null));
                 choiceOne.setBackgroundColor(getResources().getColor(R.color.purple_200, null));
             }
         });
@@ -130,6 +136,7 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+        // Added for lab 3
         findViewById(R.id.nextBtn).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -158,6 +165,7 @@ public class MainActivity extends AppCompatActivity {
         });
 
 
+
         findViewById(R.id.deleteBtn).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -165,7 +173,11 @@ public class MainActivity extends AppCompatActivity {
                 allFlashcards = flashcardDatabase.getAllCards();
             }
         });
-        
+
+
+
+
+
         findViewById(R.id.add).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -173,18 +185,20 @@ public class MainActivity extends AppCompatActivity {
 
                 MainActivity.this.startActivityForResult(intent, 100);
             }
-
         });
     }
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
-        if (requestCode == 100 && resultCode==RESULT_OK) { // this 100 needs to match the 100 we used when we called startActivityForResult!
-            String question = data.getExtras().getString("question"); // 'string1' needs to match the key we used when we put the string in the Intent
+
+        //added for lab 3
+        if (requestCode == 100 && resultCode == RESULT_OK && data != null) {
+            String question = data.getExtras().getString("question");
             String answer = data.getExtras().getString("answer");
 
             ((TextView) findViewById(R.id.question)).setText(question);
             ((TextView) findViewById(R.id.answer)).setText(answer);
+
 
             flashcardDatabase.insertCard(new Flashcard(question, answer));
             allFlashcards = flashcardDatabase.getAllCards();
@@ -192,6 +206,18 @@ public class MainActivity extends AppCompatActivity {
         }
     }
 }
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

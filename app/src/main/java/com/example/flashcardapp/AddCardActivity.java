@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.EditText;
+import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -19,6 +20,7 @@ public class AddCardActivity extends AppCompatActivity {
         findViewById(R.id.cancelBtn).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+
                 finish();
             }
         });
@@ -30,7 +32,7 @@ public class AddCardActivity extends AppCompatActivity {
                 String card_a = ((EditText) findViewById(R.id.answerPlace)).getText().toString();
 
 
-                Intent data = new Intent();
+                Intent data = new Intent(AddCardActivity.this, MainActivity.class);
                 data.putExtra("question", card_q);
                 data.putExtra("answer", card_a);
                 setResult(RESULT_OK, data);
@@ -38,6 +40,8 @@ public class AddCardActivity extends AppCompatActivity {
             }
 
         });
+        String s1 = getIntent().getStringExtra("question");
+        String s2 = getIntent().getStringExtra("answer");
 
 
 
