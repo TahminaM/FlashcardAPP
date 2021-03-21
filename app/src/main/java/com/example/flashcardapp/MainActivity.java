@@ -1,4 +1,3 @@
-
 package com.example.flashcardapp;
 
 import android.content.Intent;
@@ -16,15 +15,9 @@ import java.util.List;
 
 public class MainActivity extends AppCompatActivity {
 
-    //added for lab 3
-    private TextView questionSideView;
-    private TextView answerSideView;
-
     FlashcardDatabase flashcardDatabase;
     List<Flashcard> allFlashcards;
     int currentCardDisplayedIndex = 0;
-
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -37,19 +30,10 @@ public class MainActivity extends AppCompatActivity {
         TextView choiceThree = findViewById(R.id.choiceThree);
         ImageView toggle = findViewById(R.id.toggle);
         Button buttonR = findViewById(R.id.buttonR);
-        ImageView add = findViewById(R.id.add);
 
-        //added for lab 3
-        ImageView trash = findViewById(R.id.deleteBtn);
         flashcardDatabase = new FlashcardDatabase(getApplicationContext());
-
-        questionSideView = findViewById(R.id.question);
-        answerSideView = findViewById(R.id.answer);
-
-        flashcardDatabase = new FlashcardDatabase(this);
         allFlashcards = flashcardDatabase.getAllCards();
 
-        flashcardDatabase = new FlashcardDatabase((getApplicationContext()));
         if (flashcardDatabase.getAllCards().size() > 0){
             ((TextView) findViewById(R.id.question)).setText(allFlashcards.get(0).getQuestion());
             ((TextView) findViewById(R.id.answer)).setText(allFlashcards.get(0).getAnswer());
@@ -57,13 +41,6 @@ public class MainActivity extends AppCompatActivity {
         }
 
         currentCardDisplayedIndex = 0;
-        Flashcard flashcard = flashcardDatabase.getAllCards().get(0);
-        String question = flashcard.getQuestion();
-        questionSideView.setText(question);
-        String answer = flashcard.getAnswer();
-        answerSideView.setText(answer);
-
-
         //for the button.
         final boolean[] showAnswers = {true};
         final boolean[] flipped = {false};
@@ -72,22 +49,25 @@ public class MainActivity extends AppCompatActivity {
         choiceOne.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                choiceOne.setBackgroundColor(getResources().getColor(R.color.green, null));
-                choiceOne.setBackgroundColor(getResources().getColor(R.color.purple_200, null));
+                choiceOne.setBackgroundColor(getResources().getColor(R.color.red, null));
+                choiceTwo.setBackgroundColor(getResources().getColor(R.color.red, null));
+                choiceThree.setBackgroundColor(getResources().getColor(R.color.green, null));
             }
         });
         choiceTwo.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                choiceOne.setBackgroundColor(getResources().getColor(R.color.purple_200, null));
-                choiceTwo.setBackgroundColor(getResources().getColor(R.color.black, null));
+                choiceOne.setBackgroundColor(getResources().getColor(R.color.red, null));
+                choiceTwo.setBackgroundColor(getResources().getColor(R.color.red, null));
+                choiceThree.setBackgroundColor(getResources().getColor(R.color.green, null));
             }
         });
         choiceThree.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                choiceOne.setBackgroundColor(getResources().getColor(R.color.purple_200, null));
-                choiceThree.setBackgroundColor(getResources().getColor(R.color.black, null));
+                choiceOne.setBackgroundColor(getResources().getColor(R.color.red, null));
+                choiceTwo.setBackgroundColor(getResources().getColor(R.color.red, null));
+                choiceThree.setBackgroundColor(getResources().getColor(R.color.green, null));
             }
         });
         //question and answer toggle
@@ -148,7 +128,7 @@ public class MainActivity extends AppCompatActivity {
 
                 // make sure we don't get an IndexOutOfBoundsError if we are viewing the last indexed card in our list
                 if(currentCardDisplayedIndex >= allFlashcards.size()) {
-                    Snackbar.make(questionSideView,
+                    Snackbar.make(questionTextView,
                             "You've reached the end of the cards, going back to start.",
                             Snackbar.LENGTH_SHORT)
                             .show();
@@ -163,20 +143,17 @@ public class MainActivity extends AppCompatActivity {
                 ((TextView) findViewById(R.id.answer)).setText(flashcard.getQuestion());
             }
         });
-
-
-
         findViewById(R.id.deleteBtn).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 flashcardDatabase.deleteCard(allFlashcards.get(currentCardDisplayedIndex).getQuestion());
                 allFlashcards = flashcardDatabase.getAllCards();
+                Flashcard flashcard = allFlashcards.get(currentCardDisplayedIndex);
+
+                ((TextView) findViewById(R.id.question)).setText(flashcard.getAnswer());
+                ((TextView) findViewById(R.id.answer)).setText(flashcard.getQuestion());
             }
         });
-
-
-
-
 
         findViewById(R.id.add).setOnClickListener(new View.OnClickListener() {
             @Override
@@ -196,9 +173,6 @@ public class MainActivity extends AppCompatActivity {
             String question = data.getExtras().getString("question");
             String answer = data.getExtras().getString("answer");
 
-            ((TextView) findViewById(R.id.question)).setText(question);
-            ((TextView) findViewById(R.id.answer)).setText(answer);
-
 
             flashcardDatabase.insertCard(new Flashcard(question, answer));
             allFlashcards = flashcardDatabase.getAllCards();
@@ -206,19 +180,3 @@ public class MainActivity extends AppCompatActivity {
         }
     }
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

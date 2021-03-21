@@ -5,6 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context="com.example.flashcardapp.MainActivity">
+
     <TextView
         android:id="@+id/question"
         android:layout_width="match_parent"
@@ -19,9 +20,9 @@
 
     <TextView
         android:id="@+id/answer"
-        android:layout_height="226dp"
-        android:layout_alignParentStart="true"
         android:layout_width="match_parent"
+        android:layout_height="200dp"
+        android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
         android:background="#81B622"
         android:gravity="center"
@@ -32,14 +33,12 @@
         android:visibility="invisible" />
 
     <TextView
-        android:id="@+id/choiceThree"
+        android:id="@+id/choiceOne"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentTop="true"
+        android:layout_below="@id/deleteBtn"
+        android:layout_marginTop="10dp"
         android:layout_centerHorizontal="true"
-        android:layout_marginStart="-2dp"
-        android:layout_marginTop="230dp"
         android:background="#E2BEF1"
         android:gravity="center"
         android:text="2006"
@@ -49,27 +48,20 @@
         android:id="@+id/choiceTwo"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentTop="true"
-        android:layout_centerInParent="true"
-        android:layout_marginStart="0dp"
-        android:layout_marginTop="325dp"
+        android:layout_below="@+id/choiceOne"
+        android:layout_marginTop="10dp"
         android:background="#E2BEF1"
         android:gravity="center"
         android:text="2007"
         android:textColor="#ffffff"
         android:textSize="50sp" />
 
-
     <TextView
-        android:id="@+id/choiceOne"
+        android:id="@+id/choiceThree"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentTop="true"
-        android:layout_centerInParent="true"
-        android:layout_marginStart="-2dp"
-        android:layout_marginTop="417dp"
+        android:layout_below="@+id/choiceTwo"
+        android:layout_marginTop="10dp"
         android:background="#E2BEF1"
         android:gravity="center"
         android:text="2008"
@@ -89,9 +81,9 @@
         android:id="@+id/buttonR"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@id/choiceThree"
+        android:layout_below="@+id/choiceThree"
         android:layout_centerInParent="true"
-        android:layout_marginTop="197dp"
+        android:layout_marginTop="10dp"
         android:gravity="center"
         android:text="Reset" />
 
