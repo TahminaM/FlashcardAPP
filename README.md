@@ -37,6 +37,9 @@ Users can now add their own flashcards and save them so they can use it to study
     - [X]User can enter and submit a Question and Answer through the 'Add Card Screen'
     - [X]User will see the card they just created on the main screen when they press the 'Save Button'
     - [X]Push progress to GitHub!
+    g
+## App Walk-though
++![FlashcardAPP](http://g.recordit.co/xWhb5JoRGK.gif)
 
     ##Optional
     - [X]User can edit a card
