@@ -8,8 +8,8 @@ The flashcards are now saved to a database. It will still be there when the app 
 
 ### App Walk-though
 
-<https://i.imgur.com/5BUwyTa.gif width=200><br>
-+![FlashcardAPP](https://i.imgur.com/5BUwyTa.gif)
+<https://http://g.recordit.co/aAluus0H9Z.gif><br>
++![FlashcardAPP](http://g.recordit.co/aAluus0H9Z.gif)
 
 ## Required
 - [X] User can create a card and still see their created card when the app is relaunched.
@@ -57,17 +57,17 @@ Display a question and responds to a user's tap to display the answer to the que
 +![FlashcardAPP](https://recordit.co/j9s1Muiyby.gif)
 
 ## Required
-- [X] Create New Project in Android Studio
-- [X] Add a view for the front side of the flashcard to display the question
-- [X] Add a view for the back side of the flashcard to display the answer
-- [X] Build in logic to show the answer side when the card is tapped
-- [X] Push code to GitHub
+   - [X] Create New Project in Android Studio
+   - [X] Add a view for the front side of the flashcard to display the question
+   - [X] Add a view for the back side of the flashcard to display the answer
+   - [X] Build in logic to show the answer side when the card is tapped
+   - [X] Push code to GitHub
 ## Optional
-- [X]toggle the flashcard between the question side and the answer side
-- [X]Style the question and answer side of the card to better distinguish between the two sides
-- [X]Add selectable multiple choice answers beneath the card
-- [X]Change the background color of the multiple choice answers when clicked to indicate whether the question was answered correctly
-- [X]Further customize and style the card
+   - [X]toggle the flashcard between the question side and the answer side
+   - [X]Style the question and answer side of the card to better distinguish between the two sides
+   - [X]Add selectable multiple choice answers beneath the card
+   - [X]Change the background color of the multiple choice answers when clicked to indicate whether the question was answered correctly
+   - [X]Further customize and style the card
 
 ## App Walk-though
 <"http://g.recordit.co/6kCz0Ydc1c.gif" width=200><br>
