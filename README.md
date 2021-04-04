@@ -6,7 +6,6 @@ FLASHCARD APP:
 
     ### App Walk-though
 
-<img src="http://g.recordit.co/dO784UxqNK.gif" width=200><br>
 +![FlashcardAPP](http://g.recordit.co/dO784UxqNK.gif)
 
 
