@@ -107,15 +107,49 @@ public class MainActivity extends AppCompatActivity {
         questionTextView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+
+
+                View questionSideView = findViewById(R.id.question);
+                // get the center for the clipping circle
+                int cx = questionSideView.getWidth() / 2;
+                int cy = questionSideView.getHeight() / 2;
+
+                // get the final radius for the clipping circle
+                float finalRadius = (float) Math.hypot(cx, cy);
+
+                // create the animator for this view (the start radius is zero)
+                Animator anim = ViewAnimationUtils.createCircularReveal(questionSideView, cx, cy, 0f, finalRadius);
+
                 questionTextView.setVisibility(View.INVISIBLE);
                 answerTextView.setVisibility(View.VISIBLE);
+
+
+                anim.setDuration(2000);
+                anim.start();
             }
         });
         answerTextView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+
+
+                View questionSideView = findViewById(R.id.answer);
+                // get the center for the clipping circle
+                int cx = questionSideView.getWidth() / 2;
+                int cy = questionSideView.getHeight() / 2;
+
+                // get the final radius for the clipping circle
+                float finalRadius = (float) Math.hypot(cx, cy);
+
+                // create the animator for this view (the start radius is zero)
+                Animator anim = ViewAnimationUtils.createCircularReveal(questionSideView, cx, cy, 0f, finalRadius);
+
                 questionTextView.setVisibility(View.VISIBLE);
                 answerTextView.setVisibility(View.INVISIBLE);
+
+                anim.setDuration(2000);
+                anim.start();
+
             }
         });
         // added a button so users can easily reset the correct and incorrect choices.
@@ -153,34 +187,21 @@ public class MainActivity extends AppCompatActivity {
         findViewById(R.id.nextBtn).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                // don't try to go to next card if you have no cards to begin with
-                if (allFlashcards.size() == 0)
-                    return;
-                // advance our pointer index so we can show the next card
-                currentCardDisplayedIndex++;
-
-                // make sure we don't get an IndexOutOfBoundsError if we are viewing the last indexed card in our list
-                if(currentCardDisplayedIndex >= allFlashcards.size()) {
-                    Snackbar.make(questionTextView,
-                            "You've reached the end of the cards, going back to start.",
-                            Snackbar.LENGTH_SHORT)
-                            .show();
-                    currentCardDisplayedIndex = 0;
-                }
-
-                // set the question and answer TextViews with data from the database
-                allFlashcards = flashcardDatabase.getAllCards();
-                Flashcard flashcard = allFlashcards.get(currentCardDisplayedIndex);
-
-                ((TextView) findViewById(R.id.question)).setText(flashcard.getAnswer());
-                ((TextView) findViewById(R.id.answer)).setText(flashcard.getQuestion());
-
-
-
 
                 //lab 5
                 final Animation leftOutAnim = AnimationUtils.loadAnimation(v.getContext(),R.anim.left_out);
                 final Animation rightInAnim = AnimationUtils.loadAnimation(v.getContext(), R.anim.right_in);
+                // don't try to go to next card if you have no cards to begin with
+                if (allFlashcards.size() == 0)
+                    return;
+
+
+                if(findViewById(R.id.question).getVisibility() != View.VISIBLE){
+                    findViewById(R.id.answer).startAnimation(leftOutAnim);
+                } else {
+                    findViewById(R.id.question).startAnimation(leftOutAnim);
+                }
+
 
                 leftOutAnim.setAnimationListener(new Animation.AnimationListener() {
                     @Override
@@ -191,6 +212,24 @@ public class MainActivity extends AppCompatActivity {
                     @Override
                     public void onAnimationEnd(Animation animation) {
                         // this method is called when the animation is finished playing
+                        // advance our pointer index so we can show the next card
+                        currentCardDisplayedIndex++;
+
+                        // make sure we don't get an IndexOutOfBoundsError if we are viewing the last indexed card in our list
+                        if(currentCardDisplayedIndex >= allFlashcards.size()) {
+                            Snackbar.make(questionTextView,
+                                    "You've reached the end of the cards, going back to start.",
+                                    Snackbar.LENGTH_SHORT)
+                                    .show();
+                            currentCardDisplayedIndex = 0;
+                        }
+
+                        // set the question and answer TextViews with data from the database
+                        allFlashcards = flashcardDatabase.getAllCards();
+                        Flashcard flashcard = allFlashcards.get(currentCardDisplayedIndex);
+
+                        ((TextView) findViewById(R.id.question)).setText(flashcard.getAnswer());
+                        ((TextView) findViewById(R.id.answer)).setText(flashcard.getQuestion());
                     }
 
                     @Override
