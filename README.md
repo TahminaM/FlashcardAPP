@@ -82,7 +82,7 @@ Display a question and responds to a user's tap to display the answer to the que
    - [X]Further customize and style the card
 
 ## App Walk-though
-<"http://g.recordit.co/6kCz0Ydc1c.gif" width=200><br>
+<"http://g.recordit.co/6kCz0Ydc1c.gif" width=200> <br>
 +![FlashcardAPP](http://g.recordit.co/wHGzwU7Au7.gif)
 
 
